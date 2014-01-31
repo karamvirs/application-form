@@ -18,11 +18,10 @@
 	   <th>Time Period for Joining</th>
 	   </tr>
 
-	  <?php while ($row1 = mysql_fetch_array($this)) 
+	  <?php 
+    foreach ($query->result_array() as $row1) 
    
-    {
-       ?>
-   <?php } ?>
+    ?>
         <tr>
             <td><?php echo $row1['post'] ;?></td>
             <td><?php echo $row1['name'] ;?></td>

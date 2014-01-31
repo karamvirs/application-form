@@ -1,33 +1,7 @@
-
-	 
- 
- 
- 
-<html>
-	<style>
-	tr td {
-    display:block;
-    height: 32px;
-    
-      
-} 
-	tr td input {
-    border: 1px solid #CCCCCC;
-    border-radius: 5px 5px 5px 5px;
-    height: 32px;
-    line-height: 32px;
-   margin-left:20px;
-    
-}
-	
-	
-	
-	
-	</style>
-
-
+ <html>
+<head>	
 <body bgcolor="grey"> 
-
+<link rel="stylesheet" href="<?php echo base_url();?>assets/stylesheet.css">
 <form name="form1" id="form1" action="<?php echo base_url();?>index.php/welcome/form_data" method="post">
 
 <table cellpadding="2" width="40%" bgcolor="white" align="center"
@@ -41,7 +15,7 @@ cellspacing="2">
  
  <tr>
 <td>Post Applied for:</td>
-<td><input type="text"name="post"size="30"></td>
+<td><input type="text"name="post"size="30"required></td>
 </tr>
  
 <tr>
@@ -75,8 +49,9 @@ cellspacing="2">
 
 <tr>
 <td>EmailId:</td>
-<td><input type="text" name="email" id="email" size="30"></td>
+<td><input type="text" name="email" id="email" size="30"required></td>
 </tr>
+                <!--  student details    -----  -->
 <td>Sounce of information about Vacancy</td>
 <td><b><u>Details For Education</u></b></td>
 <tr>
@@ -86,7 +61,7 @@ cellspacing="2">
 <td>%ge:</td><td><input type="text"size="5"name="Education[1][per]">&nbsp;<input type="text"size="5" name="Education[2][per]">&nbsp;<input type="text"size="5" name="Education[0][per]"></td>
 </tr>
 </tr>
-
+   <!--previous employement details-------->
 
 <td><b>Give Detalis OF Previous Employement</b></td>
 <td>Name of Company:</td><td>
@@ -102,21 +77,22 @@ cellspacing="2">
 
 <tr>
 <td><b> Exp Salary:</b></td>
-<td><input type="text" name="salary" id="salary" size="30"></td>
+<td><input type="text" name="salary" id="salary" size="30"required></td>
 </tr> 
 <tr>
 <td><b>Time period of joining:-</b></td>
-<td><input type="text" name="period" id="period" size="30"></td>
+<td><input type="text" name="period" id="period" size="30"required></td>
 </tr> 
 <tr align="center">
 <td colspan="2"><input type="submit"name="submit" value="Submit" /></td> 
 </tr>
 <tr><td>
-<a href="<?php echo base_url();?>index.php/welcome/emp_getall" >View All</a></td></tr>
+<a href="<?php echo base_url();?>index.php/welcome/emp_getall" style="margin-left:220px;">View All</a></td></tr>
 <td style="color:blue">PLEASE FILL IT COMPLETE AND ACCURATE............</td>
 </table>
 </form>
 
 </center>
 </body>
+</head>
 </html>
