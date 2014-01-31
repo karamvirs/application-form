@@ -1,0 +1,63 @@
+<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+
+class Welcome extends CI_Controller {
+
+	/**
+	 * Index Page for this controller.
+	 *
+	 * Maps to the following URL
+	 * 		http://example.com/index.php/welcome
+	 *	- or -  
+	 * 		http://example.com/index.php/welcome/index
+	 *	- or -
+	 * Since this controller is set as the default controller in 
+	 * config/routes.php, it's displayed at http://example.com/
+	 *
+	 * So any other public methods not prefixed with an underscore will
+	 * map to /index.php/welcome/<method_name>
+	 * @see http://codeigniter.com/user_guide/general/urls.html
+	 */
+	public function index()
+	{
+		$this->load->view('form');
+	}
+	public function formdata()
+	{
+		echo"<pre>";
+		print_r($_REQUEST);
+		DIE();
+	$name=$_REQUEST['name'];
+	$f_name=$_REQUEST['fathername'];
+	$address=$_REQUEST['paddress'];
+	$birth = $_REQUEST['birth'];
+	$experience =$_REQUEST['exp'];
+	$mobileno=  $_REQUEST['contact'];
+	$email =$_REQUEST['email'];
+  	
+               
+	
+	 //$pre_details = json_encode('company,des,drawn,reason');
+	$expsalary=$_REQUEST['salary'];
+	$period=$_REQUEST['period'];
+		
+			$data = array(
+		   'name' => $name ,
+		   'f_name' => $f_name ,
+		   'address' => $address  ,
+		    'dob' => $birth  ,
+		    'expierence'=> $experience ,
+		    'contact' =>$mobileno ,
+		    'email' =>$email ,
+		   // 'edu_details' =>$edu_details,
+		    'pre_emp_details'=>$pre_details ,		    
+		    'exp_salary'=> $expsalary ,
+		    'join_period' =>$period
+		    		    		);
+
+		$this->db->insert('detail_table', $data); 
+		}
+}
+
+
+/* End of file welcome.php */
+/* Location: ./application/controllers/welcome.php */
