@@ -49,9 +49,9 @@ $active_group = 'default';
 $active_record = TRUE;
 
 $db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'root';
-$db['default']['password'] = '';
-$db['default']['database'] = 'basic_info';
+$db['default']['username'] = 'avanttec_af';
+$db['default']['password'] = 'sBEe=S4Xmb~F';
+$db['default']['database'] = 'avanttec_af';
 $db['default']['dbdriver'] = 'mysql';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
