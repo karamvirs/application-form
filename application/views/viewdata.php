@@ -19,7 +19,7 @@
 	   </tr>
 
 	  <?php 
-    foreach ($query->result_array() as $row1) 
+    
    
     ?>
         <tr>

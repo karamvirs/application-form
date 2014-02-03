@@ -24,49 +24,6 @@ class Welcome extends CI_Controller {
 	}
 	public function form_data()
 	{
-		//student edution information field---------//
-		$education=$_REQUEST['Education'];
-		$year_ary=array();
-		$board_ary=array();
-		$subject_ary=array();
-		$per_ary=array();
-		
-		foreach($education as $val)
-		{
-			
-            $year_ary[]= $val ['year'];  
-			$board_ary[]= $val['board'];
-			$subject_ary[]= $val['subject']; 
-			$per_ary[]= $val['per']; 
-		}
-		$main_array=array($year_ary,$board_ary,$subject_ary,$per_ary);
-		
-		$a=json_encode($main_array);
-	      //    echo"<pre>";
-         //   print_r($main_array);
-			
-			
-			//-----employee previous company details------//
-		$previous=$_REQUEST['company'];
-		$cmpny_name=array();
-		$deg=array();
-		$salary_drawn=array();
-		$reason=array();
-		
-		foreach($previous as $val)
-		{
-			
-          	$cmpny_name[]= $val ['name'];  
-		     $deg[]= $val['des'];
-			$salary_drawn[]= $val['drawn']; 
-			$reason[]= $val['reason']; 
-		
-		}
-		$main=array($cmpny_name,$deg,$salary_drawn,$reason);
-		
-		$b=json_encode($main);
-		
-		
 		
 		$applied=$_REQUEST['post'];
 		$name=$_REQUEST['name'];
@@ -78,50 +35,77 @@ class Welcome extends CI_Controller {
 		$email =$_REQUEST['email'];
 		$expsalary=$_REQUEST['salary'];
 		$period=$_REQUEST['period']; 
-
-
-
-	//---------value insert into database-------------//
+		
+	//-----------------------------//
+	     $applicant_id=$_REQUEST['appli'];
+         $title=$_REQUEST['title'];
+         $year= $_REQUEST['year'];
+         $per=$_REQUEST['per'];
+         
+         //------------------------//
+         $employer=$_REQUEST['company'];
+         $start_date=$_REQUEST['start'];
+         $end_date=$_REQUEST['end'];
+         $reason=$_REQUEST['leave'];
+         
+         	//---------value insert into database-------------//
 			
 			$data = array(
 			
 			 'post' => $applied ,
-		   'name' => $name ,
+		     'name' => $name ,
 		    'f_name' => $f_name ,
 		   'address' => $address  ,
 		    'dob' => $birth  ,
 		    'expierence'=> $experience ,
-		    'contact' =>$mobileno ,
-		    'email' =>$email ,
-		    'edu_details' =>$a,
-		   'pre_emp_details'=>$b ,		    
+		    'phone' =>$mobileno ,
+		    'email' =>$email ,	    
 		    'exp_salary'=> $expsalary ,
 		    'join_period' =>$period
 		    		    		);
 
-		$this->db->insert('detail_table', $data); 
-		}
-		
+		$this->db->insert('applicants', $data); 
 
 		
+          
+		      
+		     $data = array(
+			
+			'applicant_id'=>$applicant_id,
+			'edu_title' => $title ,
+		     'year_of_passing' => $year ,
+		      'percentage' => $per 
+		      );
+		      $this->db->insert('applicant_edu', $data);
+		      
+	  
+	     $data = array(
+			
+			'employer'=>$employer,
+			 'emp_start_date' => $start_date ,
+		     'emp_end_date' => $end_date ,
+		      'reason_for_leaving' => $reason 
+		      );
+		      $this->db->insert('applicant_emp', $data);
+		  }
 	 
-	 public function emp_getall()
+	/* public function emp_getall()
 	  {
 		  $this->load->view('viewdata');
 		   
 		   $query = $this->db->query('SELECT * FROM detail_table');
 
-        foreach ($query->result() as $row)
+        foreach($query->result() as $row)
 		
-		{   
-  //   echo"<pre>";
-  //  print_r($query);
-  //  die();
-	}
+	{   */
+    // echo"<pre>";
+	//print_r($query->result());
+   // die();
+	
    
       }  
      
-     }
+     
 
 /* End of file welcome.php */
 /* Location: ./application/controllers/welcome.php */

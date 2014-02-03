@@ -34,7 +34,7 @@ cellspacing="2">
 
 <tr>
 <td>Birth:</td>
-<td><input type="text" name="birth" id="birth" size="30"required></td>
+<td><input type="date" name="birth" id="birth" size="30" value="yyyy-dd-mm"required></td>
 </tr>
 
 <tr>
@@ -55,22 +55,26 @@ cellspacing="2">
 <td>Sounce of information about Vacancy</td>
 <td><b><u>Details For Education</u></b></td>
 <tr>
-<td>Year:</td><td><input type="text" name="Education[1][year]" size="5">&nbsp;<input type="text" name="Education[2][year]" size="5">&nbsp;<input type="text" name="Education[0][year]" size="5"></td>
-<td>Board/Uni:</td><td><input type="text" name="Education[1][board]"  size="5">&nbsp;<input type="text" name="Education[2][board]"size="5">&nbsp;<input type="text" name="Education[0][board]" size="5"></td>
-<td>Subject:</td><td><input type="text" name="Education[1][subject]" size="5">&nbsp;<input type="text" name="Education[2][subject]" size="5">&nbsp;<input type="text" name="Education[0][subject]" size="5"></td>
-<td>%ge:</td><td><input type="text"size="5"name="Education[1][per]">&nbsp;<input type="text"size="5" name="Education[2][per]">&nbsp;<input type="text"size="5" name="Education[0][per]"></td>
-</tr>
+<td>Applicant ID</td><td><input type="text"name="appli"> </td>
+<td>Title Of Education</td><td><input type="text"name="title"> </td>
+<td>Year Of Passing</td><td><input type="text"name="year"> </td>
+<td>Percentage</td> <td><input type="text"name="per">  </td>
 </tr>
    <!--previous employement details-------->
 
 <td><b>Give Detalis OF Previous Employement</b></td>
-<td>Name of Company:</td><td>
-<input type="text"size="5"name="company[1][name]">&nbsp;<input type="text"size="5"name="company[2][name]">&nbsp;<input type="text"size="5"name="company[0][name]"></td>
-<td>Designation:</td>
-<td><input type="text" size="5"name="company[1][des]">&nbsp;<input type="text" size="5"name="company[2][des]">&nbsp;<input type="text" size="5" name="company[0][des]"></td>
-<td>Salary Drawn:</td><td><input type="text" size="5"name="company[1][drawn]">&nbsp;<input type="text" size="5"name="company[2][drawn]">&nbsp;<input type="text" size="5"name="company[0][drawn]"></td>
-<td>Reason for Leave:</td><td><input type="text" size="5"name="company[1][reason]">&nbsp;<input type="text" size="5"name="company[2][reason]">&nbsp;<input type="text" size="5" name="company[0][reason]"></td>
 
+<td>Name of Company:</td><td>
+<input type="text" name="company"></td>
+
+<td>Start Date:</td>
+<td><input type="text" name="start" value="yyyy-dd-mm"></td>
+
+<td>End Date:</td>
+<td><input type="text" name="end" value="yyyy-dd-mm"></td>
+
+<td>Reason for Leave:</td>
+<td><input type="text" name="leave"</td>
 
 </tr>
 
@@ -86,8 +90,10 @@ cellspacing="2">
 <tr align="center">
 <td colspan="2"><input type="submit"name="submit" value="Submit" /></td> 
 </tr>
-<tr><td>
-<a href="<?php echo base_url();?>index.php/welcome/emp_getall" style="margin-left:220px;">View All</a></td></tr>
+
+<tr>
+<td>
+<!--<a href="<?php echo base_url();?>index.php/welcome/emp_getall" style="margin-left:220px;">View All</a></td></tr>-->
 <td style="color:blue">PLEASE FILL IT COMPLETE AND ACCURATE............</td>
 </table>
 </form>
