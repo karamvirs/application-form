@@ -1,8 +1,6 @@
 
-<h1> data from database</h1>
-
-  <body>
-	<table border='2' cellspacing='1' align='center '>
+ <body>
+	<table border='2' cellspacing='1'>
 		<tr>
 		<th>Post</th>
 	 <th>Name</th>
@@ -12,34 +10,49 @@
 	 <th>Experience</th>
 	 <th>Contact</th>
 	 <th>Email</th>
-	 <th>Student Details</th>
-	 <th>Previous Employement</th>
-	   <th>Exp Salary</th>
-	   <th>Time Period for Joining</th>
-	   </tr>
+	  <th>Exp Salary</th>
+	  <th>Time Period for Joining</th>
+	  
+	  <th>Appli_id</th>
+	 <th>Edu_title</th>
+	 <th>Passing yead</th>
+	 <th>%age</th>
+      <th>Company</th>
+	 <th>Start</th>
+	 <th>End</th>
+	 <th>Reason For Leave</th>
+	  
 
-	  <?php 
-    
-   
-    ?>
-        <tr>
-            <td><?php echo $row1['post'] ;?></td>
-            <td><?php echo $row1['name'] ;?></td>
-            <td ><?php echo $row1['fathername'];?></td>
-             <td ><?php echo $row1['paddress'];?></td>
-              <td ><?php echo $row1['father name'];?></td>
-              <td ><?php echo $row1['birth'];?></td>
-               <td ><?php echo $row1['exp'];?></td>
-                <td ><?php echo $row1['contact'];?></td>
-                 <td ><?php echo $row1['email'];?></td>
-                  <td ><?php echo $row1['Education'];?></td>
-                   <td ><?php echo $row1['company'];?></td>
-                    <td ><?php echo $row1['salary'];?></td>
-                     <td ><?php echo $row1['period'];?></td>
-               
-        </tr>
+	   </tr>
         
-    </table>
+
+        
+            <tr>
+		     <td><?php echo $row1['post'] ;?></td>
+			  <td><?php echo $row1['name'] ;?></td>
+			  <td ><?php echo $row1['f_name'];?></td>
+			  <td ><?php echo $row1['address'];?></td>
+			  <td ><?php echo $row1['dob'];?></td>
+			  <td ><?php echo $row1['expierence'];?></td>
+			  <td ><?php echo $row1['phone'];?></td>
+			  <td ><?php echo $row1['email'];?></td>
+			  <td ><?php echo $row1['exp_salary'];?></td>
+			  <td ><?php echo $row1['join_period'];?></td>
+			  
+			  <td ><?php echo $row1['applicant_id'];?></td>
+			  <td ><?php echo $row1['edu_title'];?></td>
+			  <td ><?php echo $row1['year_of_passing'];?></td>
+			  <td ><?php echo $row1['percentage'];?></td>
+			  
+			  <td ><?php echo $row1['employer'];?></td>
+			  <td ><?php echo $row1['emp_start_date'];?></td>
+			  <td ><?php echo $row1['emp_end_date'];?></td>
+			  <td ><?php echo $row1['reason_for_leaving'];?></td>
+			  
+
+               </tr>
+             
+     </table>
    </body>
 
 		
