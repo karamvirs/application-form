@@ -20,7 +20,10 @@ class Login_data extends CI_Controller {
 	
 	public function index()
 	{
-		$this->load->view('login');
+		$data=array();
+		$data["header"]=$this->load->view('template/header',$data,true);
+		$data["footer"]=$this->load->view('template/footer',$data,true);
+		$this->load->view('login',$data);
 	}
 	public function login_fun()
 	{

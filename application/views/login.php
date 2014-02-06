@@ -1,10 +1,6 @@
-<html>
-<head>    
-    <title>Login Page </title>
-	</head>
-	<body bgcolor="grey">
-	<center>
-	<div style="border:2px solid black;height:230px;width:320px;background-color:white;margin-top:70px;">
+<?php
+echo $header;
+?>
 	
 	<form action="<?php echo base_url();?>index.php/register/register" method="post"/>
 	
@@ -17,5 +13,6 @@
          </center>
          </div>
         </form>
-        </body>
-</html> 
+   <?php
+   echo $footer;
+   ?>
