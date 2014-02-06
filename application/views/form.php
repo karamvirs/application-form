@@ -91,10 +91,9 @@ cellspacing="2">
 <td colspan="2"><input type="submit"name="submit" value="Submit" /></td> 
 </tr>
 
-<tr>
-<td>
-<!--<a href="<?php echo base_url();?>index.php/welcome/emp_getall" style="margin-left:220px;">View All</a></td></tr>-->
-<td style="color:blue">PLEASE FILL IT COMPLETE AND ACCURATE............</td>
+<!--<td>
+<a href="<?php echo base_url();?>index.php/login_data/emp_getall" style="margin-left:220px;">View All</a></td></tr>
+<td style="color:blue">PLEASE FILL IT COMPLETE AND ACCURATE............</td> -->
 </table>
 </form>
 
