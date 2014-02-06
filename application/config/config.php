@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'http://localhost/xampp/CodeIgniter/';
+$config['base_url']	= 'http://192.232.214.244/af/';
 
 /*
 |--------------------------------------------------------------------------
