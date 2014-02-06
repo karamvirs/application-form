@@ -9,7 +9,7 @@ cellspacing="2">
 
 <tr>
 <td colspan=2>
-<center><font size=5><b><u>APPLICATION OF EMPLOYEMENT </u></b></font></center>
+<center><font size=5><b><u>APPLICATION FOR EMPLOYEMENT </u></b></font></center>
 </td>
 </tr>
  
