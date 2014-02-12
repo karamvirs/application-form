@@ -20,8 +20,10 @@ class Welcome extends CI_Controller {
 	
 	public function index()
 	{
+	 $email=$this->session->userdata('email');	
+		echo $email; die;  
 		$this->load->view('form');
-	}
+		 }
 	public function form_data()
 	{
 		
@@ -87,27 +89,15 @@ class Welcome extends CI_Controller {
 		      'reason_for_leaving' => $reason 
 		      );
 		      $this->db->insert('applicant_emp', $data);
-		  }
-	 
-	/* public function emp_getall()
-	  {
-		  $this->load->view('viewdata');
 		   
-		   $query = $this->db->query('SELECT * FROM detail_table');
-
-        foreach($query->result() as $row)
-		
-	{   */
-    // echo"<pre>";
-	//print_r($query->result());
-   // die();
+		        $data=array();
+		$data['header']=$this->load->view('template/header',$data,true);
+		$data['footer']=$this->load->view('template/footer',$data,true);
+		$this->load->view('login',$data);
+		     // $this->load->view('login');
+		  }
 	
+        }  
+     
    
-      }  
-     
-     
-
-/* End of file welcome.php */
-/* Location: ./application/controllers/welcome.php */
-
 ?>

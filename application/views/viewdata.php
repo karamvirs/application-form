@@ -1,8 +1,10 @@
 
+<html>
+<head>
  <body>
-	<table border='2' cellspacing='1'>
-		<tr>
-		<th>Post</th>
+<table border='2' cellspacing='1'>
+	<tr>
+	<th>Post</th>
 	 <th>Name</th>
 	 <th>F_name</th>
 	 <th>Address</th>
@@ -12,7 +14,6 @@
 	 <th>Email</th>
 	  <th>Exp Salary</th>
 	  <th>Time Period for Joining</th>
-	  
 	  <th>Appli_id</th>
 	 <th>Edu_title</th>
 	 <th>Passing yead</th>
@@ -21,39 +22,40 @@
 	 <th>Start</th>
 	 <th>End</th>
 	 <th>Reason For Leave</th>
-	  
-
-	   </tr>
-        
-
-        
-            <tr>
-		     <td><?php echo $row1['post'] ;?></td>
-			  <td><?php echo $row1['name'] ;?></td>
-			  <td ><?php echo $row1['f_name'];?></td>
-			  <td ><?php echo $row1['address'];?></td>
-			  <td ><?php echo $row1['dob'];?></td>
-			  <td ><?php echo $row1['expierence'];?></td>
-			  <td ><?php echo $row1['phone'];?></td>
-			  <td ><?php echo $row1['email'];?></td>
-			  <td ><?php echo $row1['exp_salary'];?></td>
-			  <td ><?php echo $row1['join_period'];?></td>
+	  <th>Delete</th>
+     </tr>
+     <?php
+       foreach ($row1 as $roe) 
+	
+     ?>
+             <tr>
+		      <td><?php echo $roe['post'] ;?></td>
+			  <td><?php echo $roe['name'] ;?></td>
+			  <td ><?php echo $roe['f_name'];?></td>
+			  <td ><?php echo $roe['address'];?></td>
+			  <td ><?php echo $roe['dob'];?></td>
+			  <td ><?php echo $roe['expierence'];?></td>
+			  <td ><?php echo $roe['phone'];?></td>
+			  <td ><?php echo $roe['email'];?></td>
+			  <td ><?php echo $roe['exp_salary'];?></td>
+			  <td ><?php echo $roe['join_period'];?></td>
 			  
-			  <td ><?php echo $row1['applicant_id'];?></td>
-			  <td ><?php echo $row1['edu_title'];?></td>
-			  <td ><?php echo $row1['year_of_passing'];?></td>
-			  <td ><?php echo $row1['percentage'];?></td>
+			  <td ><?php echo $roe['applicant_id'];?></td>
+			  <td ><?php echo $roe['edu_title'];?></td>
+			  <td ><?php echo $roe['year_of_passing'];?></td>
+			  <td ><?php echo $roe['percentage'];?></td>
 			  
-			  <td ><?php echo $row1['employer'];?></td>
-			  <td ><?php echo $row1['emp_start_date'];?></td>
-			  <td ><?php echo $row1['emp_end_date'];?></td>
-			  <td ><?php echo $row1['reason_for_leaving'];?></td>
-			  
-
-               </tr>
-             
+			  <td ><?php echo $roe['employer'];?></td>
+			  <td ><?php echo $roe['emp_start_date'];?></td>
+			  <td ><?php echo $roe['emp_end_date'];?></td>
+			  <td ><?php echo $roe['reason_for_leaving'];?></td>
+   <td>  <?php echo anchor('delete/rowdata/'. 'id', 'Delete', array('onClick' =>   "return confirm('Are you sure you want to delete?')"));?>
+           </td> 
+           <?php
+		
+           ?>
+			<a href="<?php echo base_url();?>index.php/welcome_login/login">Add New Entry</a>
      </table>
    </body>
-
-		
-
+ </head>
+</html>

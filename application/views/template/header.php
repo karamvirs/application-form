@@ -1,8 +1,9 @@
 <html>
-<head>    
-    <title>Login Page </title>
+	<head>
+		<body>
+	<h1 align="center" style="color:blue;background-color:grey;">Welcome to Avant Garde</h1>
+		</body>
+		
 	</head>
-	<body bgcolor="grey">
-	<center>
-	<div style="border:2px solid black;height:230px;width:320px;background-color:white;margin-top:70px;">
+</html>
 		
