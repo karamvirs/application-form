@@ -1,11 +1,14 @@
-
 <?php
-function get_all(){
+class Book extends CI_Model {
 
-$this->load->database();
-$query = $this->db->get('detail_table');
-return $query->result(); 
+   
+
+    function authenticate($data)
+    {
+		print_r($data);
+       die("model");
+    }
+   
 
 }
-
 ?>

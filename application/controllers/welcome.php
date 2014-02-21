@@ -20,14 +20,14 @@ class Welcome extends CI_Controller {
 	
 	public function index()
 	{
-	 $email=$this->session->userdata('email');	
-		echo $email; die;  
+	 //$email=$this->session->userdata('email');	
+	//	echo $email; die;  
+	          
 		$this->load->view('form');
 		 }
 	public function form_data()
 	{
-		
-		$applied=$_REQUEST['post'];
+	    $applied=$_REQUEST['post'];
 		$name=$_REQUEST['name'];
 		$f_name=$_REQUEST['fathername'];
 		$address=$_REQUEST['paddress'];
@@ -39,8 +39,7 @@ class Welcome extends CI_Controller {
 		$period=$_REQUEST['period']; 
 		
 	//-----------------------------//
-	     $applicant_id=$_REQUEST['appli'];
-         $title=$_REQUEST['title'];
+	     $title=$_REQUEST['title'];
          $year= $_REQUEST['year'];
          $per=$_REQUEST['per'];
          
@@ -49,7 +48,9 @@ class Welcome extends CI_Controller {
          $start_date=$_REQUEST['start'];
          $end_date=$_REQUEST['end'];
          $reason=$_REQUEST['leave'];
-         
+        // echo"<pre>";
+        // print_r($_REQUEST);  die;
+       
          	//---------value insert into database-------------//
 			
 			$data = array(
@@ -57,7 +58,7 @@ class Welcome extends CI_Controller {
 			 'post' => $applied ,
 		     'name' => $name ,
 		    'f_name' => $f_name ,
-		   'address' => $address  ,
+		    'address' => $address  ,
 		    'dob' => $birth  ,
 		    'expierence'=> $experience ,
 		    'phone' =>$mobileno ,
@@ -65,24 +66,20 @@ class Welcome extends CI_Controller {
 		    'exp_salary'=> $expsalary ,
 		    'join_period' =>$period
 		    		    		);
-
-		$this->db->insert('applicants', $data); 
+           $this->db->insert('applicants', $data); 
 
 		
-          
-		      
-		     $data = array(
-			
-			'applicant_id'=>$applicant_id,
+           $data = array(
+		
 			'edu_title' => $title ,
 		     'year_of_passing' => $year ,
 		      'percentage' => $per 
 		      );
-		      $this->db->insert('applicant_edu', $data);
+		    $this->db->insert('applicant_edu', $data);
 		      
 	  
-	     $data = array(
-			
+	        $data = array(
+		
 			'employer'=>$employer,
 			 'emp_start_date' => $start_date ,
 		     'emp_end_date' => $end_date ,
@@ -90,14 +87,17 @@ class Welcome extends CI_Controller {
 		      );
 		      $this->db->insert('applicant_emp', $data);
 		   
-		        $data=array();
-		$data['header']=$this->load->view('template/header',$data,true);
-		$data['footer']=$this->load->view('template/footer',$data,true);
-		$this->load->view('login',$data);
-		     // $this->load->view('login');
+	        $this->db->select('*');    
+			$this->db->from('applicants');
+			$this->db->join('applicant_edu', 'applicants.user_id = applicant_edu.applicant_id');
+			$this->db->join('applicant_emp', 'applicants.user_id = applicant_emp.applicant_id');
+            $query = $this->db->get();
+            $result['row1']=$query->result_array();
+			$this ->load->view('/template/header');
+			$this->load->view('viewdata',$result);
+			$this ->load->view('/template/footer');
+			return $query->result_array(); 	
 		  }
 	
         }  
-     
-   
-?>
+    ?>

@@ -2,7 +2,7 @@
 <head>	
 <body bgcolor="grey"> 
 <link rel="stylesheet" href="<?php echo base_url();?>assets/stylesheet.css">
-<form name="form1" id="form1" action="<?php echo base_url();?>index.php/welcome/form_data" method="post" onsubmit="return validation()">
+<form name="form1" id="form1" action="<?php echo base_url();?>index.php/update/update_data" method="post">
 
 <table cellpadding="2" width="40%" bgcolor="white" align="center"cellspacing="2">
 
@@ -12,7 +12,6 @@
 </td>
 </tr>
  <tr>
-
 <tr>
 <td>Post Applied for:</td>
 <td><input type="text"name="post" id="post"size="30"></td>
@@ -20,21 +19,21 @@
  
 <tr>
 <td>Name:</td>
-<td><input type="text" name="name" id="name" size="30"></td>
+<td><input type="text" name="name" id="name" size="30" ></td>
 </tr>
 
 <tr>
 <td>Father Name:</td>
-<td><input type="text" name="fathername" id="fathername"size="30"></td>
+<td><input type="text" name="fathername" id="fathername"size="30" ></td>
 </tr>
 <tr>
 <td>Present Address:</td>
-<td><input type="text" name="paddress" id="paddress" size="30"></td>
+<td><input type="text" name="paddress" id="paddress" size="30" ></td>
 </tr>
 
 <tr>
 <td>Birth:</td>
-<td><input type="date" name="birth" id="birth" size="30"placeholder="yyyy-dd-mm"></td>
+<td><input type="date" name="birth" id="birth" size="30" ></td>
 </tr>
 
 <tr>
@@ -44,12 +43,12 @@
 </tr>
 <tr>
 <td>Contact No:</td>
-<td><input type="text" name="contact" id="contact" size="30"></td>
+<td><input type="text" name="contact" id="contact" size="30" "></td>
 </tr>
 
 <tr>
 <td>EmailId:</td>
-<td><input type="text" name="email" id="email" size="30"></td>
+<td><input type="text" name="email" id="email" size="30" ></td>
 </tr>
                 <!--  student details    -----  -->
 <td>Sounce of information about Vacancy</td>
@@ -58,23 +57,23 @@
 
 <td>Title Of Education</td><td><input type="text"name="title"> </td>
 <td>Year Of Passing</td><td><input type="text"name="year"> </td>
-<td>Percentage</td> <td><input type="text"name="per">  </td>
+<td>Percentage</td> <td><input type="text"name="per" >  </td>
 </tr>
    <!--previous employement details-------->
 
 <td><b>Give Detalis OF Previous Employement</b></td>
 
 <td>Name of Company:</td><td>
-<input type="text" name="company"></td>
+<input type="text" name="company" ></td>
 
 <td>Start Date:</td>
-<td><input type="text" name="start" placeholder="yyyy-dd-mm"></td>
+<td><input type="text" name="start" ></td>
 
 <td>End Date:</td>
-<td><input type="text" name="end" placeholder="yyyy-dd-mm"></td>
+<td><input type="text" name="end" ></td>
 
 <td>Reason for Leave:</td>
-<td><input type="text" name="leave"</td>
+<td><input type="text" name="leave"></td>
 
 </tr>
 
@@ -98,8 +97,6 @@
 </body>
 </head>
 </html>
-
-
 
 <script type="text/javascript">
 function validation()
@@ -197,6 +194,8 @@ return false;
 
 
 </script> 
+
+
 
 
 
